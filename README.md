@@ -22,7 +22,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+    require 'simplicard'
+    deck = CardDeck.new
+    deck.deal #=> This will return a card object from the deal action
+    deck.pick_a_card  #=> This will return a card object which was selected randomly from the deck
+    deck.shuffle_it #=> This will return an array of current cards in the deck after shuffling
+    deck.cards_left #=> Return the number of cards left in the deck
+    deck.find_card(Card.new(11,0))  #=> return the index of the card in the @deck array, if not found, return false
+    deck.show #=> ["Ace of Spades", "Ace of Clubs", "Ace of Diamonds", "Ace of Hearts",...] return an array  cards in the deck
+    deck.put_back_cards #=> return all the cards back to the deck
+    deck.is_complete? #=> check to see if all the cards are in the deck. If the deck has duplicate card or less than 52 then it will return false
+
+    card = Card.new(1,2) #=> creating a card
+    card.value #=> 1
+    card.suit.value #=> 2
+    card.show #=> Ace of Diamonds
+    card.value_to_s #=> Ace
+    card.suit.suit_to_s => Diamonds
+```
 
 ## Development
 
